@@ -31,14 +31,3 @@ class STask(STaskAdd):  # наследует от STaskAdd
 tasks = []
 
 
-@app.post("/tasks")
-async def add_task(
-        task: Annotated[STaskAdd, Depends()],
-):
-    tasks.append(task)
-    return {"ok": True}
-
-# @app.get("/tasks")
-# def get_tasks():
-#     task = Task(name="Say hola!")
-#     return {"data": task}
